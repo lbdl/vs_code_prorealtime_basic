@@ -1,0 +1,25 @@
+{
+    "name": "realtimepro",
+    "displayName": "itl",
+    "description": "realtimepro shitty basic",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.31.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "realtimeprobasic",
+            "aliases": ["RealTimePro Basic", "realtimeprobasic"],
+            "extensions": ["itl", "itt", "rtp"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "realtimeprobasic",
+            "scopeName": "source.itl",
+            "path": "./syntaxes/realtimeprobasic.tmLanguage.json"
+        }]
+    }
+}

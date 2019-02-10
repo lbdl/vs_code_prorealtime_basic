@@ -1,0 +1,115 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "RealTimePro Basic",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#mycomments"
+		},
+		{
+			"include": "#control"
+		},
+		{
+			"include": "#variable"
+		},
+		{
+			"include": "#operations"
+		}
+	],
+	"repository": {
+		"operations": {
+			"patterns": [
+				{
+					"match": "\\*|\\-|\\+|=|<=|>=|<>|<|>",
+					"name": "keyword.operator.realtimeprobasic"
+				},
+				{
+					"match": "(?i:\\b(Array|Add|Asc|Atn|CBool|CByte|CCur|CDate|CDbl|Chr|CInt|CLng|Conversions|Cos|CreateObject|CSng|CStr|Date|DateAdd|DateDiff|DatePart|DateSerial|DateValue|Day|Derived|Math|Escape|Eval|Exists|Exp|Filter|FormatCurrency|FormatDateTime|FormatNumber|FormatPercent|GetLocale|GetObject|GetRef|Hex|Hour|InputBox|InStr|InStrRev|Int|Fix|IsArray|IsDate|IsEmpty|IsNull|IsNumeric|IsObject|Item|Items|Join|Keys|LBound|LCase|Left|Len|LoadPicture|Log|LTrim|RTrim|Trim|Maths|Mid|Minute|Month|MonthName|MsgBox|Now|Oct|Remove|RemoveAll|Replace|RGB|Right|Rnd|Round|ScriptEngine|ScriptEngineBuildVersion|ScriptEngineMajorVersion|ScriptEngineMinorVersion|Second|SetLocale|Sgn|Sin|Space|Split|Sqr|StrComp|String|StrReverse|Tan|Time|Timer|TimeSerial|TimeValue|TypeName|UBound|UCase|Unescape|VarType|Weekday|WeekdayName|Year)\\b)",
+					"name": "support.function.realtimeprobasic"
+				}
+			]
+		},
+		"variable": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "storage.type.realtimeprobasic"
+						},
+						"3": {
+							"name": "variable.other.expression.realtimeprobasic"
+						},
+						"2": {
+							"name": "meta.separator.assign.realtimeprobasic"
+						}
+					},
+					"match": "(\\b[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)(\\s*=\\s*)(\\b[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)",
+					"name": "variable.assign.realtimeprobasic"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.variable.realtimeprobasic"
+						}
+					},
+					"match": "(\\$)[a-zA-Z_xf-xff][a-zA-Z0-9_xf-xff]*?\\b\\s*",
+					"name": "variable.other.realtimeprobasic"
+				}
+		
+			]
+		},
+		"mycomments": {
+			"patterns": [
+				{
+					"name": "comment.line.realtimeprobasic",
+					"begin": "(\/\/|(?i:Rem\\s{1,}))",
+					"end": "(.*$)"
+				}
+			]
+		},
+		"control": {
+			"patterns": [
+				{
+					"match":
+					  "(?i:\\b(If|Then|Else|ElsIf|EndIf|While|Wend|For|To|DownTo|Continue|Do|Next|Break)\\b)",
+					"name": "keyword.control.realtimeprobasic"
+				},
+				{
+					"match": "(?i:\\b(And|Not|Or|Xor)\\b)",
+					"name": "keyword.operator.realtimeprobasic"
+				}
+			]
+
+		},
+		"keywords": {
+			"patterns": [
+				{
+				"name": "keyword.control.realtimeprobasic",
+				"match": "\\b(if|while|for)\\b"
+			}
+		]
+		},
+		"strings": {
+			"name": "string.quoted.double.realtimeprobasic",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.realtimeprobasic",
+					"match": "\\\\."
+				}
+			]
+		}
+		
+	},
+	"scopeName": "source.itl"
+}
+
+
+
+  
